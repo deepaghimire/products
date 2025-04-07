@@ -19,7 +19,7 @@ const Home = () => {
   });
 
   return (
-    <div>
+    <div className="bg-gray-50">
       <Hero />
       <section className="py-20">
         <div className="container mx-auto">
@@ -38,11 +38,3 @@ const Home = () => {
 };
 
 export default Home;
-
-//  import React from "react";
-
-// const Home = () => {
-//   return <h1>Welcome to Our E-Commerce Store</h1>;
-// };
-
-// export default Home;

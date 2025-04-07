@@ -3,10 +3,11 @@ import React, { createContext, useState, useEffect, useContext } from "react";
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
+  // cart state
   const [cart, setCart] = useState([]);
-
+  // item amount state
   const [itemAmount, setItemAmount] = useState(0);
-
+  // total price state
   const [total, setTotal] = useState(0);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import React from "react";
 import bg from "../img/background.jpg";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 const Hero = () => {
   return (
@@ -33,83 +33,15 @@ const Hero = () => {
 
 export default Hero;
 
-// import React from "react";
-// import bg from "../img/background.jpg";
-// import { Link } from "react-router-dom";
-
-// const Hero = () => {
-//   return (
-//     <section className="h-[800px]
-//     style={{ backgroundImage: `url(${bg})`}} >
-
-//       <div className="container mx-auto flex justify-around h-full">
-//         {/* text */}
-//         <div className="flex flex-col justify-center">
-//           <div className="font-semibold flex items-center uppercase">
-//             <div className="w-10 h-[2px] mr-3 bg-cyan-700"></div>Hot Trend
-//           </div>
-//           <h1 className="uppercase text-[55px] md:text-[70px] leading-[1.1] font-semibold mb-4">
-//             Fresh Fashion Finds
-//             <br />
-//             <span className="font-light">new collection</span>
-//           </h1>
-//           <Link
-//             to={"/"}
-//             className="self-start uppercase font-semibold border-b-2 border-primary"
-//           >
-//             Discover More
-//           </Link>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Hero;
-
-// import { Link } from "react-router-dom";
+// import { Link } from "react-router";
 
 // const categoryProducts = {
-//   electronics: [
-//     {
-//       name: "Laptops",
-//       image: "/images/electronics/laptop.jpg",
-//       coverImage: "/images/electronics/laptop-cover.jpg",
-//       link: "/laptop",
-//     },
-//     {
-//       name: "Smartphones",
-//       image: "/images/electronics/phone.jpg",
-//       link: "/phone",
-//     },
-//     {
-//       name: "Tablets",
-//       image: "/images/electronics/tablet.jpg",
-//       link: "/tablet",
-//     },
-//     {
-//       name: "Monitors",
-//       image: "/images/electronics/monitor.jpg",
-//       link: "/monitor",
-//     },
-//   ],
+
 //   jewelery: [
 //     { name: "Rings", image: "/images/jewelery/ring.jpg", link: "/rings" },
-//     {
-//       name: "Necklaces",
-//       image: "/images/jewelery/necklace.jpg",
-//       link: "/necklaces",
-//     },
-//     {
-//       name: "Earrings",
-//       image: "/images/jewelery/earrings.jpg",
-//       link: "/earrings",
-//     },
-//     {
-//       name: "Bracelets",
-//       image: "/images/jewelery/bracelet.jpg",
-//       link: "/bracelets",
-//     },
+//     { name: "Necklaces",image: "/images/jewelery/necklace.jpg",link: "/necklaces"},
+//     {name: "Earrings",image: "/images/jewelery/earrings.jpg",link: "/earrings"},
+//     {name: "Bracelets",image: "/images/jewelery/bracelet.jpg",link: "/bracelets"},
 //   ],
 //   mens_clothing: [
 //     { name: "T-Shirts", image: "/images/mens/tshirt.jpg", link: "/T-Shirts" },
@@ -121,21 +53,12 @@ export default Hero;
 //     { name: "Dresses", image: "/images/womens/dress.jpg", link: "/dresses" },
 //     { name: "Blouses", image: "/images/womens/blouse.jpg", link: "/blouses" },
 //     { name: "Skirts", image: "/images/womens/skirt.jpg", link: "/skirts" },
-//     {
-//       name: "Handbags",
-//       image: "/images/womens/handbag.jpg",
-//       link: "/handbags",
-//     },
+//     { name: "Handbags",image: "/images/womens/handbag.jpg",link: "/handbags",
 //   ],
 // };
 
 // const HomePage = () => {
 //   const categories = [
-//     {
-//       name: "electronics",
-//       displayName: "Electronics",
-//       items: categoryProducts.electronics,
-//     },
 //     {
 //       name: "jewelery",
 //       displayName: "Jewelery",
