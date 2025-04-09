@@ -79,8 +79,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
 import { Link } from "react-router";
-import Logo from "../img/logo.svg";
 import { BsBag } from "react-icons/bs";
+import logo from "../img/shoplogo.jpg";
+
 import MensClothing from "../pages/MensClothingPage";
 
 const Header = () => {
@@ -111,10 +112,13 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between h-full">
         <Link to={"/"}>
           <div className="text-3xl text-blue-950 shadow-black font-bold mr-120 ">
+            {/* <div className="w-[100px] mr-4">
+              <img className="in" src={logo} alt="Deepa Store Logo" />
+            </div> */}
             Deepa-Store{" "}
           </div>
           {/* <div className="w-[40px]">
-            <img src={Logo} alt="Logo" />
+            <img src={shop} alt="" />
           </div> */}
         </Link>
 
@@ -124,20 +128,20 @@ const Header = () => {
             to="/MensClothing"
             className="hover:text-blue-700 transition mr-4"
           >
-            Men
+            👨‍🦰Men
           </Link>
           <Link
             to="/WomensClothing"
             className="hover:text-blue-700 transition mr-4"
           >
-            Women
+            👩‍🦰Women
           </Link>
           <Link to="/jewellery" className="hover:text-blue-700 transition mr-4">
-            Jewellery
+            💎 Jewellery
           </Link>
         </div>
 
-        {/* Search bar */}
+        {/* Search bar
         <div className="relative flex items-center">
           <input
             type="text"
@@ -146,7 +150,7 @@ const Header = () => {
             onChange={handleSearchChange}
             className="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 "
           />
-        </div>
+        </div> */}
 
         {/* Cart */}
         <div

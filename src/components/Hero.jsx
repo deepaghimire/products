@@ -1,20 +1,20 @@
 import React from "react";
-import bg from "../img/background.jpg";
+import bg from "../img/backimage.jpg";
 import { Link } from "react-router";
 
 const Hero = () => {
   return (
     <section
-      className="h-[800px] bg-cover bg-center"
+      className="h-[800px] bg-cover bg-center "
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div className="container mx-auto flex justify-around h-full">
+      <div className="container mx-auto flex justify-around h-full absolute left-100 mr-80">
         {/* text */}
         <div className="flex flex-col justify-center">
           <div className="font-semibold flex items-center uppercase">
-            <div className="w-10 h-[2px] mr-3 bg-cyan-700"></div>Hot Trend
+            <div className="w-10 h-[2px] mr-2 bg-cyan-700"></div>Hot Trend
           </div>
-          <h1 className="uppercase text-[55px] md:text-[70px] leading-[1.1] font-semibold mb-4">
+          <h1 className="uppercase text-[55px] md:text-[70px] leading-[1.1] font-semibold mb-4 mr-20">
             Fresh Fashion Finds
             <br />
             <span className="font-light">new collection</span>
