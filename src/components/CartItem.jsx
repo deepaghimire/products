@@ -1,14 +1,12 @@
 import React, { useContext } from "react";
 import { Link } from "react-router";
-
 import { IoMdAdd, IoMdClose, IoMdRemove } from "react-icons/io";
-
 import { CartContext } from "../contexts/CartContext";
 
 const CartItem = ({ item }) => {
   const { removeFromCart, increaseAmount, decreaseAmount } =
     useContext(CartContext);
-  // destructure item
+
   const { id, title, image, price, amount } = item;
 
   return (

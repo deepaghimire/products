@@ -1,33 +1,3 @@
-// import React from "react";
-// import { BrowserRouter as Router, Route, Routes } from "react-router";
-// import Home from "./pages/Home";
-// import ProductDetails from "./pages/ProductDetail";
-// import "./App.css";
-// import Sidebar from "./components/sidebar";
-// import Header from "./components/Header";
-// import Footer from "./components/Footer";
-
-// const App = () => {
-//   return (
-//     <div className="overflow-hidden">
-//       <Router>
-//         <Header />
-//         <Routes>
-//           <Route path="/" element={<Home />}></Route>
-//           <Route path="/product/:id" element={<ProductDetails />}></Route>
-
-//           {/* <Route path="/mens-clothing" element={<MensClothing />} />
-//           <Route path="/womens-clothing" element={<WomensClothing />} />
-//           <Route path="/jewellery" element={<Jewellery />} /> */}
-//         </Routes>
-//         <Sidebar />
-//         <Footer />
-//       </Router>
-//     </div>
-//   );
-// };
-
-// export default App;
 import React from "react";
 import Home from "./pages/Home";
 import ProductDetails from "./pages/ProductDetail";
@@ -39,6 +9,8 @@ import Jewellery from "./pages/JeweleryPage";
 import Sidebar from "./components/sidebar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import LoginForm from "./components/login";
+import RegisterPage from "./components/register";
 import "./App.css";
 function UserLayout() {
   return (
@@ -47,6 +19,7 @@ function UserLayout() {
       <div className="min-h-[83dvh] pt-20">
         <Outlet />
       </div>
+
       <Sidebar />
       <Footer />
     </>
@@ -62,6 +35,9 @@ function App() {
           <Route path="/MensClothing" element={<MensClothing />} />
           <Route path="/WomensClothing" element={<WomensClothing />} />
           <Route path="/Jewellery" element={<Jewellery />} />
+          <Route path="/contact-info" element={<LoginForm />} />
+          <Route path="/register" element={<RegisterPage />} />
+
           {/* Add more routes if needed */}
         </Route>
       </Routes>

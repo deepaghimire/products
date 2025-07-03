@@ -1,15 +1,11 @@
-// // src/pages/WomensClothingPage.jsx
-// import CategoryPage from "./CategoryPage";
-
-// const WomensClothingPage = () => {
-//   return <CategoryPage category="womens_clothing" />;
-// };
-
-// export default WomensClothingPage;
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { Link } from "react-router";
+import { BsPlus, BsEyeFill } from "react-icons/bs";
+import { CartContext } from "../contexts/CartContext";
 
 const WomensClothing = () => {
   const [products, setProducts] = useState([]);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/category/women's clothing")
@@ -18,14 +14,65 @@ const WomensClothing = () => {
   }, []);
 
   return (
-    <div className="p-4 grid grid-cols-2 md:grid-cols-4 gap-4 padding-4 full-width">
-      {products.map((item) => (
-        <div key={item.id} className="border p-4 rounded shadow bg-pink-200">
-          <img src={item.image} alt={item.title} className="h-40 mx-auto" />
-          <h2 className="text-md font-semibold mt-2">{item.title}</h2>
-          <p className="text-sm text-gray-600">${item.price}</p>
-        </div>
-      ))}
+    <div className=" mx-auto px-20 py-20 relative w-full  h-full  bg-gradient-to-r from-fuchsia-400 to-yellow-500">
+      <h1 className="text-3xl font-bold mb-8 text-center">
+        👩‍🦰Women's Collection
+      </h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="bg-white p-4  shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 relative"
+          >
+            <div className="border border-[#111111] h-[200px] mb-4 relative overflow-hidden group">
+              <div className="w-full h-full flex justify-center items-center">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="max-h-[160px] group-hover:scale-110 transition duration-300"
+                />
+              </div>
+
+              {/* Action buttons */}
+              <div className="absolute top-4 -right-11 group-hover:right-4 p-2 flex flex-col gap-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <button
+                  onClick={() => {
+                    addToCart(product, product.id);
+                    window.alert(
+                      `${product.title} has been added to your cart!`
+                    );
+                  }}
+                  className="w-10 h-10 bg-teal-500 text-white flex justify-center items-center  hover:bg-teal-600 transition"
+                  aria-label={`Add ${product.title} to cart`}
+                >
+                  <BsPlus className="text-xl" />
+                </button>
+                <Link
+                  to={`/product/${product.id}`}
+                  className="w-10 h-10 bg-white flex justify-center items-center text-primary  shadow hover:bg-gray-100 transition"
+                  aria-label={`View details of ${product.title}`}
+                >
+                  <BsEyeFill />
+                </Link>
+              </div>
+            </div>
+
+            {/* Product info */}
+            <div>
+              <div className="text-sm capitalize text-gray-500 mb-1">
+                {product.category}
+              </div>
+              <Link to={`/product/${product.id}`}>
+                <h2 className="font-semibold mb-1 line-clamp-2 hover:text-blue-600 transition">
+                  {product.title}
+                </h2>
+              </Link>
+              <div className="font-semibold">${product.price.toFixed(2)}</div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
